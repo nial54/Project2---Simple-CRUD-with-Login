@@ -96,7 +96,7 @@ public class DataServlet extends HttpServlet {
 		
 	private void viewrd (HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
 			HttpSession session = request.getSession();
-			int id =(int)session.getAttribute("id");
+			int id =(Integer)session.getAttribute("id");
 			Data theuser = dao.viewRd(id);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
 			request.setAttribute("data", theuser);
